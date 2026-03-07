@@ -8,4 +8,4 @@ Firstly, I learn what will actually happen when merge two branches and how to so
 Secondly, I'm confused about something like "origin" or "HEAD" in the log information, so I asked AI for it. Now I understand that "commit" is similar to many "nodes", and there will also be some pointers. Branches point at nodes, and HEAD points at a branch. After that I thought I have a deeper understanding about Git.
 I still have some problems.
 Firstly, sometimes I can't access my GitHub website.
-Secondly, I found typing through "nano" is different from typying on my word document and I haven't fully grasped some of its rules yet.  I 
+Secondly, I found typing through "nano" is different from typying on my word document and I haven't fully grasped some of its rules yet.   
