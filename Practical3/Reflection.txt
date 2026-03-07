@@ -1,0 +1,11 @@
+During this practical, not everything goes as smoothly as I expected. 
+Firstly, I found that because I'm a Windows user, I can't use the command "touch" on powershell and have to use gitbash.
+Secondly, I found that when I added another thing I like to the file, It did not break the line. But then I learned that I can add /n at the beginning or just simply use "nano".
+
+Forthly, I found that sometimes I use git log, then below will appear a colon but I don't know what to input. Then I learned that this is because the log information is too long and the terminal has changed into a "log mode", which I could exit by typing "q".
+However, I'm happy that I also learn lot of things.
+Firstly, I learn what will actually happen when merge two branches and how to solve the conflicts. This is a thing that I didn't understand in the lecture.
+Secondly, I'm confused about something like "origin" or "HEAD" in the log information, so I asked AI for it. Now I understand that "commit" is similar to many "nodes", and there will also be some pointers. Branches point at nodes, and HEAD points at a branch. After that I thought I have a deeper understanding about Git.
+I still have some problems.
+Firstly, sometimes I can't access my GitHub website.
+Secondly, I found typing through "nano" is different from typying on my word document and I haven't fully grasped some of its rules yet.  I 
