@@ -5,8 +5,8 @@
 i = 0 # to record the date
 a = 5 # the initial number of infected students is 5
 r = 0.4 # the growth rate is 0.4
-for a <= 91:
-    a += 0.4^a
+while a <= 91:
+    a += r*a
     i += 1
     print("The number of infected students is" , a , "at day" ,i)
 print("it takes" , i , "days to infect all")
