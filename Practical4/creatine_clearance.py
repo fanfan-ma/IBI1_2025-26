@@ -6,8 +6,8 @@
 while True: # make sure that only the legal value could continue to the next step
     try:
         age = int(input("Please enter your age in years: ")) # remember to change the data type so that you could calculate later!
-        weight = int(input("Please enter your weight in kg: "))
-        Cr = int(input("Please enter your creatine concentration in µmol/l:"))
+        weight = float(input("Please enter your weight in kg: "))
+        Cr = float(input("Please enter your creatine concentration in µmol/l:"))
         break
     except:
         print("Please enter a valid number for age, weight and creatine concentration") # to give the warning if user enters illegal value
