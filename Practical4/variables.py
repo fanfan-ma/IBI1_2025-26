@@ -5,9 +5,9 @@ d = b - a
 e = c - b
 if d > e:
     print("the population growth is decelerating in Scotland")
-if d == e:
+elif d == e:
     print("the population growth doesn't change in Scotland")
-if d < e:
+else:
     print("the population growth is accelerating in Scotland")
 # d > e, the population growth is decelerating in Scotland.
 print("\n")
