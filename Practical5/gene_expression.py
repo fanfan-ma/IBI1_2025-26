@@ -13,13 +13,14 @@ dict_genes["MYC"] = 11.6 # add another gene into the dict
 import numpy as np
 import matplotlib.pyplot as plt
 
-# create a vairable to store the quantity of bars
-# create variables to store the height, position and width of the bars respectively
-# how to do this? firstly, create empty lists (because we need it to be dynamic, so do not use tuple)
-# use for to get into the dictionary and take out the keys and values inside in each cycle respectively
-# add it to the right list
-# give the title of x-axis and y-axis respectively
-# give the distance between the coordinates, make sure that on the x-axis, it is the same as the positions of the bars
+# Strp 1: create a vairable to store the number of genes(bars)
+# Step 2: create variables to store the height, position and width of the bars respectively
+# Step 3: retrieve values from the dictionary
+# (create empty lists (because we need it to be dynamic, so do not use tuple))
+# (use for to get into the dictionary and take out the keys and values inside in each cycle respectively)
+# (add it to the right list)
+# Step 4: give the title of x-axis and y-axis respectively
+# Step 5: give the distance between the coordinates, make sure that on the x-axis, it is the same as the positions of the bars
 
 N = len(dict_genes)
 genes = []
@@ -28,7 +29,7 @@ for gene , expression in dict_genes.items():
     genes.append(gene)
     expressions.append(expression)
 width = 0.35
-x_coordinate = np.arange(N) # np.arange means generating a sequence of consecutive numbers starting from 0 and ending at N
+x_coordinate = np.arange(N) # generate x-axis position for each gene
 pl = plt.bar(x_coordinate , expressions , width) # the contents in the brackets represent the position, height and width of the bars respectively
 plt.ylabel("Expressions")
 plt.title("Expressions by gene")
@@ -42,8 +43,8 @@ plt.show()
 # if no, print an error message
 
 gene_of_interest = "TP53" # this could be modified
-if gene_of_interest in genes:
-    print("the expression is" ,  dict_genes["TP53"])
+if gene_of_interest in dict_genes: # search for the key in the dictionary
+    print("the expression is" ,  dict_genes[gene_of_interest])
 else:
     print("it is not in the gene list")
 
