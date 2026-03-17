@@ -10,15 +10,15 @@ dict_genes = {
         "name": "EGFR"
         "expression": "15.1"
     }
-    "gene1": {
+    "gene3": {
         "name": "BRCA1"
         "expression": "8.2"
     }
-    "gene1": {
+    "gene4": {
         "name": "PTEN"
         "expression": "5.3"
     }
-    "gene1": {
+    "gene5": {
         "name": "ESR1"
         "expression": "10.7"
     }
