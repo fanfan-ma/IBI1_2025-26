@@ -16,8 +16,7 @@ import matplotlib.pyplot as plt
 # create a vairable to store the quantity of bars
 # create variables to store the height, position and width of the bars respectively
 # how to do this? firstly, create empty lists (because we need it to be dynamic, so do not use tuple)
-# use for to get into the dictionary and take out the dictionaries inside in each cycle respectively
-# use key to get the value we need in each dictionary
+# use for to get into the dictionary and take out the keys and values inside in each cycle respectively
 # add it to the right list
 # give the title of x-axis and y-axis respectively
 # give the distance between the coordinates, make sure that on the x-axis, it is the same as the positions of the bars
@@ -42,6 +41,17 @@ plt.show()
 # if yes, print its expression
 # if no, print an error message
 
-# gene_of_interest = TP53 # this could be modified
-# if gene_of_interest in genes:
-#     print("the expression is" ,  )
+gene_of_interest = "TP53" # this could be modified
+if gene_of_interest in genes:
+    print("the expression is" ,  dict_genes["TP53"])
+else:
+    print("it is not in the gene list")
+
+# calculate the sum of the expressions
+# divide it by N
+
+sum_expression = 0
+for value_expression in dict_genes.values():
+    sum_expression += value_expression
+average_expression = sum_expression/N
+print("the average gene expression level across all genes is" , average_expression)
