@@ -10,6 +10,7 @@ dict_genes = {
     "ESR1": 10.7
     }
 dict_genes["MYC"] = 11.6 # add another gene into the dict
+print("Gene expression dictionary:" , dict_genes)
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -44,7 +45,7 @@ plt.show()
 
 gene_of_interest = "TP53" # this could be modified
 if gene_of_interest in dict_genes: # search for the key in the dictionary
-    print("the expression is" ,  dict_genes[gene_of_interest])
+    print("the expression of" , gene_of_interest , "is" ,  dict_genes[gene_of_interest])
 else:
     print("it is not in the gene list")
 
