@@ -9,6 +9,7 @@ dict_genes = {
     "PTEN": 5.3,
     "ESR1": 10.7
     }
+print("The initial gene expression dictionary:" , dict_genes)
 dict_genes["MYC"] = 11.6 # add another gene into the dict
 print("Gene expression dictionary:" , dict_genes)
 import numpy as np
