@@ -38,3 +38,21 @@ for country in dict_population.values():
     percent_change = round(percent_change , 2)
     country["percent_change"] = percent_change
     print("The percentage change of" , country["country"] , "is" , country["percent_change"])
+
+# create an empty list called list_change
+# create another empty list called list_change_ordered
+# iterate through the values to obtain each sub-dictionary
+# take out "pop_change" in each dictionary and put it into list_change, then copy it
+# get into a loop and add the largest number in list_change to list_change_ordered
+# remove that number from list_change_copy
+
+list_change = []
+list_change_ordered = []
+max_increase = 100
+for country in dict_population.values():
+    list_change.append(country["pop_change"])
+list_change_copy = list_change.copy()
+for country in dict_population.values():
+    list_change_ordered.append(round(max(list_change_copy) , 2))
+    list_change_copy.remove(max(list_change_copy))
+print(list_change_ordered)
