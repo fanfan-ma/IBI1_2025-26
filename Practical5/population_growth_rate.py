@@ -37,7 +37,7 @@ for country in dict_population.values():
     percent_change = country["pop_change"]/country["pop_2020"]*100
     percent_change = round(percent_change , 2)
     country["percent_change"] = percent_change # calculate population change and percentage change for each country
-    print("The percentage change of" , country["country"] , "is" , country["percent_change"])
+    print("The percentage change of" , country["country"] , "is" , country["percent_change"] , "%")
 
 # Alternative approach (manual sorting using max and remove):
 
