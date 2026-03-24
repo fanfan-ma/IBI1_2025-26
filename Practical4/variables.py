@@ -10,6 +10,10 @@ elif d == e:
 else:
     print("the population growth is accelerating in Scotland")
 # d > e, the population growth is decelerating in Scotland.
+X = True
+Y = False
+W = X or y
+print("W =" , W , "when X = True and Y = False")
 print("\n")
 print("X" , "\t" , "Y" , "\t" , "W" , "\t")
 for X in (True , False):
