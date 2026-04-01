@@ -6,8 +6,9 @@
 
 input_file = open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa' , 'r')
 stop_codon = input("Please input one of the stop codons (TAA, TAG, TGA):")
+n = 0
 sequence = ""
-codon_counts = {
+codon_counts = { # store the initial numbers of codons
 'AAA':0,'AAC':0,'AAG':0,'AAT':0,
 'ACA':0,'ACC':0,'ACG':0,'ACT':0,
 'AGA':0,'AGC':0,'AGG':0,'AGT':0,
@@ -31,39 +32,56 @@ import matplotlib.pyplot as plt
 if stop_codon in ["TAA" , "TAG" , "TGA"]:
     for line in input_file:
         if re.search(r'^>' , line):
-            if sequence != "":
-                pattern = r'(ATG)((?:...)*)' + stop_codon
-                matches = re.findall(pattern , sequence)
+            if sequence != "": # to skip during the first gene cycle
+                matches = []
+                for start in re.finditer(r'ATG', sequence):
+                    i = start.start()
+                    for j in range(i+3, len(sequence)-2, 3):
+                        codon = sequence[j:j+3]
+                        if codon in ['TAA','TAG','TGA']:
+                            if codon == stop_codon:
+                                matches.append(sequence[i:j+3])
+                            break
                 if matches:
-                    in_frame_codons = matches[0][1]
-                    longest = max(in_frame_codons, key=lambda x: len(x))
-                    in_frame_codons_string = "ATG" + longest
+                    n += 1
+                    longest = max(matches, key = len) # compare the length of strings in the tuple
                     in_frame_codons_list = []
-                    for i in range(0 , len(in_frame_codons_string) , 3):
-                        in_frame_codons_list.append(in_frame_codons_string[i:i+3])
+                    for i in range(0 , len(longest) - 3 , 3):
+                        in_frame_codons_list.append(longest[i:i+3])
                     for in_frame_codon in ['AAA','AAC','AAG','AAT','ACA','ACC','ACG','ACT','AGA','AGC','AGG','AGT','ATA','ATC','ATG','ATT','CAA','CAC','CAG','CAT','CCA','CCC','CCG','CCT','CGA','CGC','CGG','CGT','CTA','CTC','CTG','CTT','GAA','GAC','GAG','GAT','GCA','GCC','GCG','GCT','GGA','GGC','GGG','GGT','GTA','GTC','GTG','GTT','TAC','TAT','TCA','TCC','TCG','TCT','TGC','TGG','TGT','TTA','TTC','TTG','TTT']:
                         codon_counts[in_frame_codon] += in_frame_codons_list.count(in_frame_codon)
             sequence = ""
         else:
             sequence += line.rstrip()
-    pattern = r'(ATG)((?:...)*)' + stop_codon
-    matches = re.findall(pattern , sequence)
+    matches = []
+    for start in re.finditer(r'ATG', sequence):
+        i = start.start()
+        for j in range(i+3, len(sequence)-2, 3):
+            codon = sequence[j:j+3]
+            if codon in ['TAA','TAG','TGA']:
+                if codon == stop_codon:
+                    matches.append(sequence[i:j+3])
+                break
     if matches:
-        in_frame_codons_string = matches[0][1]
-        longest = max(in_frame_codons, key=lambda x: len(x))
-        in_frame_codons_string = "ATG" + longest
+        n += 1
+        longest = max(matches, key = len) # compare the length of strings in the tuple
         in_frame_codons_list = []
-        for i in range(0 , len(in_frame_codons_string) , 3):
-            in_frame_codons_list.append(in_frame_codons_string[i:i+3])
+        for i in range(0 , len(longest) - 3 , 3):
+            in_frame_codons_list.append(longest[i:i+3])
         for in_frame_codon in ['AAA','AAC','AAG','AAT','ACA','ACC','ACG','ACT','AGA','AGC','AGG','AGT','ATA','ATC','ATG','ATT','CAA','CAC','CAG','CAT','CCA','CCC','CCG','CCT','CGA','CGC','CGG','CGT','CTA','CTC','CTG','CTT','GAA','GAC','GAG','GAT','GCA','GCC','GCG','GCT','GGA','GGC','GGG','GGT','GTA','GTC','GTG','GTT','TAC','TAT','TCA','TCC','TCG','TCT','TGC','TGG','TGT','TTA','TTC','TTG','TTT']:
             codon_counts[in_frame_codon] += in_frame_codons_list.count(in_frame_codon)
+    for codon, count in codon_counts.items():
+        print(codon, count)
+    print("The number of genes is" , n)
     codons = list(codon_counts.keys())
     counts = list(codon_counts.values())
     labels = codons
     sizes = counts
-    plt.pie(sizes , labels = labels , autopct = '%1.1f%%' , shadow = False , startangle = 90)
+    plt.figure(figsize=(10,10))
+    plt.pie(sizes , labels = labels , autopct = '%1.1f%%' , shadow = False , startangle = 90 , labeldistance=1.2 , pctdistance=0.8 , textprops={'fontsize': 6})
+    plt.title("Codon Usage in Longest ORFs", fontsize=14)
     plt.axis('equal')
-    plt.savefig("codon_pie_chart.png")
+    plt.savefig("codon_pie_chart.png" , dpi = 300 , bbox_inches = 'tight')
     plt.close()
 else:
     print("Please enter the correct stop codon")
