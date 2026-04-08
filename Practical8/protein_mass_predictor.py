@@ -36,6 +36,10 @@ while True:
         continue
     break # exit the loop
 def calculating_protein_mass(amino_acid_sequence , amino_acid_dict):
+    """
+    Input: a sequence of amino acid
+    Return: the mass of the protein
+    """
     mass = 0
     for amino_acid in amino_acid_sequence:
         mass += amino_acid_dict[amino_acid]
