@@ -1,0 +1,5 @@
+This practical is a bit hard since some of the grammar I haven't learnt yet.
+The most important thing I learnt from the practical is that the method to simulate probability.
+For instance, using "if np.random.rand() < β".
+I also understand that these three models progress from the basics to scenaries that are increasingly close to reality.
+Also, I learn to consider all the various factors that need to be taken into account when dealing with the spread of diseases in real life.
