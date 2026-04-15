@@ -2,6 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import cm
 
 # define basic variables
 # create arrays to record the change
@@ -9,7 +10,8 @@ import matplotlib.pyplot as plt
 time = np.arange(1001)
 plt.figure(figsize = (6 , 4) , dpi = 150)
 p_vaccinated = [0 , 0.1 , 0.2 , 0.3 , 0.4 , 0.5 , 0.6 , 0.7 , 0.8 , 0.9 , 1]
-for p in p_vaccinated:
+colors = cm.viridis(np.linspace(0, 1, len(p_vaccinated)))
+for i , p in enumerate(p_vaccinated):
     I = 1
     R = 0
     N = 10000
@@ -30,7 +32,7 @@ for p in p_vaccinated:
 
     I_proportion = I / N
     p_infected = β * I_proportion
-    for i in range(1000):
+    for t in range(1000):
         I_new = sum(np.random.choice(range(2) , I , p = [γ , 1 - γ]))
         R += (I - I_new)
         S_new = sum(np.random.choice(range(2) , S , p = [p_infected , 1 - p_infected]))
@@ -45,7 +47,7 @@ for p in p_vaccinated:
 # give the time
 # draw the figure
 
-    plt.plot(time, I_history , label=f"{int(p*100)}%")
+    plt.plot(time, I_history , color = colors[i] , label=f"{int(p*100)}%")
 plt.xlabel("time")
 plt.ylabel("number of people")
 plt.title("SIR model with different vaccination rates")
