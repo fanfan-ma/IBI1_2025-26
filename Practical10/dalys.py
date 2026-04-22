@@ -48,3 +48,17 @@ sg = dalys_data.loc[dalys_data["Entity"] == "Singapore"]
 plt.plot(sg.Year, sg.DALYs, 'g+') # The preceding letters represent colors, e.g., b for blue, r for red, g for green. The following symbols indicate the shape of the scatter points: + for a plus-shaped scatter plot, o for a circular scatter plot.
 plt.xticks(sg.Year,rotation=-90) # Set the x-axis tick labels to the years and rotate them 90 degrees clockwise.
 plt.show()
+
+grouped = dalys_data.groupby("Year")
+max_dalys = grouped["DALYs"].max()
+min_dalys = grouped["DALYs"].min()
+diff = max_dalys - min_dalys
+plt.plot(diff.index, diff.values, 'b+')
+plt.xlabel("Year")
+plt.ylabel("DALYs gap (max - min)")
+plt.title("Gap in DALYs between countries over time")
+plt.xticks(rotation=-90)
+plt.show()
+
+print(dalys_data.loc[dalys_data["DALYs"].idxmax()]) # maximum occurred in Rwanda in 1994, with DALYs = 693367.49
+print(dalys_data.loc[dalys_data["Year"] == 2010].sort_values("DALYs", ascending=False).head()) # maximum in 2010 occurred in Haiti, with DALYs = 184708.16
