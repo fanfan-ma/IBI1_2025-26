@@ -23,7 +23,7 @@ print(dalys_data.iloc[0:10,2:4])
 # find the year according to that line number
 afg = dalys_data.loc[dalys_data["Entity"] == "Afghanistan"]
 afg_10 = (afg.iloc[0:10, 2:4])
-afg_max_year = afg_10.loc[afg_10["DALYs"].idxmax(), "Year"]
+afg_max_year = afg_10.loc[afg_10["DALYs"].idxmax(), "Year"] # The largest DALYs occurred in 1998 in Afghanistan across the first 10 years.
 print(f"The largest DALYs occurred in {afg_max_year} in Afghanistan across the first 10 years.")
 # my_columns = [True, True, False, True]
 # print(dalys_data.iloc[0:3,my_columns])
@@ -47,6 +47,10 @@ print(recent_min_country)
 sg = dalys_data.loc[dalys_data["Entity"] == "Singapore"]
 plt.plot(sg.Year, sg.DALYs, 'g+') # The preceding letters represent colors, e.g., b for blue, r for red, g for green. The following symbols indicate the shape of the scatter points: + for a plus-shaped scatter plot, o for a circular scatter plot.
 plt.xticks(sg.Year,rotation=-90) # Set the x-axis tick labels to the years and rotate them 90 degrees clockwise.
+plt.tight_layout()
+plt.xlabel("Year")
+plt.ylabel("DALYs per year")
+plt.title("DALYs in Singapore per year")
 plt.show()
 
 grouped = dalys_data.groupby("Year")
@@ -58,6 +62,7 @@ plt.xlabel("Year")
 plt.ylabel("DALYs gap (max - min)")
 plt.title("Gap in DALYs between countries over time")
 plt.xticks(rotation=-90)
+plt.tight_layout()
 plt.show()
 
 print(dalys_data.loc[dalys_data["DALYs"].idxmax()]) # maximum occurred in Rwanda in 1994, with DALYs = 693367.49
