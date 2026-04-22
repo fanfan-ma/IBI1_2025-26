@@ -1,0 +1,9 @@
+Question: How has the difference between the highest and lowest DALYs across countries changed over time?
+Start from: Line 52
+Discussion: 
+Overall, the gap in DALYs between countries remains relatively stable over time, with most values clustering around 100,000.
+In more recent years, there appears to be a slight decreasing trend, suggesting a modest reduction in the difference between countries.
+However, there is a pronounced spike in 1994, where the gap rises sharply to nearly 700,000. In contrast, a smaller increase is observed around 2010, reaching approximately 200,000.
+The supplementary code indicates that the maximum overall DALYs occurred in Rwanda in 1994, with a value of 693367.49, while the maximum in 2010 was in Haiti, amounting to 184708.16.
+These data suggest that the two peaks might be respectively related to 1994 Rwandan Genocide and 2010 Haiti earthquake.
+These deviations from the general pattern indicate that while the gap is usually stable, it can be strongly influenced by specific events in individual countries.
