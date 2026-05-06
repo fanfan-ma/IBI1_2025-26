@@ -1,0 +1,10 @@
+Dear professor,
+
+I'm writing to share my responses to the feedback I recevied for my formative code portfolio ICA. Thanks for giving such datailed feedback for my ICA.
+
+Firstly, I was disappointed to hear that I had no x-axis label for my bar charts in Practical5 gene_expression.py and population_growth_rate.py.
+
+I have already corrected it by adding their x-axis label as "gene" and "countries" seperately.
+
+Best wishes,
+Ma Shufan
