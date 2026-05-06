@@ -1,5 +1,6 @@
 Question: How has the difference between the highest and lowest DALYs across countries changed over time?
-Start from: Line 52
+Start from: Line 56
+End at: Line 69
 Discussion: 
 Overall, the gap in DALYs between countries remains relatively stable over time, with most values clustering around 100,000.
 In more recent years, there appears to be a slight decreasing trend, suggesting a modest reduction in the difference between countries.
