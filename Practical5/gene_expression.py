@@ -33,6 +33,7 @@ for gene , expression in dict_genes.items():
 width = 0.35
 x_coordinate = np.arange(N) # generate x-axis position for each gene
 pl = plt.bar(x_coordinate , expressions , width) # the contents in the brackets represent the position, height and width of the bars respectively
+plt.xlabel("gene")
 plt.ylabel("Expressions")
 plt.title("Expressions by gene")
 plt.xticks(x_coordinate , genes) # display the numerical positions as label names
