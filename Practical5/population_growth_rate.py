@@ -85,6 +85,7 @@ for c_bar in countries:
 ind = np.arange(N)
 width = 0.35
 pl = plt.bar(ind , population_change , width)
+plt.xlabel("Countries")
 plt.ylabel("Population Changes")
 plt.title("Population Changes by country")
 plt.xticks(ind , (country_name))
