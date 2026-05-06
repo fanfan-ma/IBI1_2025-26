@@ -36,7 +36,7 @@ plt.show()
 # randomly recover
 # randomly infect their neighbors
 
-for t in range(100):
+for t in range(101):
     S_x, S_y = np.where(population == 0)
     I_x, I_y = np.where(population == 1)
     R_x, R_y = np.where(population == 2)
@@ -52,7 +52,7 @@ for t in range(100):
 
 # draw the pictire at 0 , 10 , 50 , 100
 
-    if t in [0, 10, 50, 99]:
+    if t in [0, 10, 50, 100]:
         plt.figure(figsize = (6 , 4) , dpi = 150)
         plt.imshow(population, cmap = 'viridis', interpolation = 'nearest')
         plt.title(f"Time {t}")
