@@ -1,0 +1,7 @@
+Length of human DLX5 protein: 289
+Subcellular localisation: nucleus
+The range of percentage identities: 83.2% - 100%
+HUMAN/MOUSE: The percentage of identical amino acids is 96.54%. The alignment score is 1490.
+HUMAN/RANDOM: The percentage of identical amino acids is 4.15%. The alignment score is -246.
+MOUSE/RANDOM: The percentage of identical amino acids is 4.15%. The alignment score is -248.
+HUMAN DLX5 and MOUSE DLX5 are most closely related.
