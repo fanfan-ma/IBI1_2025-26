@@ -81,4 +81,4 @@ for namespace in handler.results:
 
     print()
 
-print("SAX running time:", end - start)
+print("SAX running time:", end - start) # sax is the shortest to finish the test
