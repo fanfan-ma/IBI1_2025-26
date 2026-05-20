@@ -21,4 +21,4 @@ for namespace in results:
     print("Term:", results[namespace][0])
     print("Number of is_a:", results[namespace][1])
     print()
-print("DOM running time:", end - start)
+print("DOM running time:", end - start) # sax is the shortest to finish the test
